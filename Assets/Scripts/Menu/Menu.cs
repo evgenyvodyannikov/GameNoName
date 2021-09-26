@@ -15,6 +15,24 @@ public class Menu : MonoBehaviour
     public Dropdown resolutionDropdown; //Список с разрешениями для игры
     private Resolution[] resolutions; //Список доступных разрешений
     private int currResolutionIndex = 0; //Текущее разрешение
+    public AudioClip[] music;
+
+    AudioClip[] sounds = new AudioClip[2];
+ 
+   public void PlayRandom()
+
+    {
+        
+    }
+
+
+
+    private void Start()
+    {
+        AudioSource audioSource = GetComponent<AudioSource>();
+        audioSource.clip = music[new System.Random().Next(music.Length)];
+        audioSource.Play();
+    }
 
     public void ShowHideMenu()
     {
@@ -52,7 +70,7 @@ public class Menu : MonoBehaviour
 
     public void GoToSettings()
     {
-        Application.Quit();
+       
     }
 
     public void SaveSettings()
