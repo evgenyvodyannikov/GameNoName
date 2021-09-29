@@ -1,30 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI; //Работа с интерфейсами
-using UnityEngine.SceneManagement; //Работа со сценами
-using UnityEngine.Audio; //Работа с аудио
+using UnityEngine.UI; //пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+using UnityEngine.SceneManagement; //пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+using UnityEngine.Audio; //пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ
 public class Menu : MonoBehaviour
 {
 
-    public bool isOpened = false; //Открыто ли меню
-    public float volume = 0; //Громкость
-    public int quality = 0; //Качество
-    public bool isFullscreen = false; //Полноэкранный режим
-    public AudioMixer audioMixer; //Регулятор громкости
-    public Dropdown resolutionDropdown; //Список с разрешениями для игры
-    private Resolution[] resolutions; //Список доступных разрешений
-    private int currResolutionIndex = 0; //Текущее разрешение
+    public bool isOpened = false; //пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ
+    public float volume = 0; //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+    public int quality = 0; //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+    public bool isFullscreen = false; //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
+    public AudioMixer audioMixer; //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+    public Dropdown resolutionDropdown; //пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
+    private Resolution[] resolutions; //пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+    private int currResolutionIndex = 0; //пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     public AudioClip[] music;
 
-    AudioClip[] sounds = new AudioClip[2];
- 
-   public void PlayRandom()
-
+    public void PlayPressed()
     {
-        
+        SceneManager.LoadScene("Game");
     }
-
 
 
     private void Start()
@@ -37,7 +33,7 @@ public class Menu : MonoBehaviour
     public void ShowHideMenu()
     {
         isOpened = !isOpened;
-        GetComponent<Canvas>().enabled = isOpened; //Включение или отключение Canvas. Ещё тут можно использовать метод SetActive()
+        GetComponent<Canvas>().enabled = isOpened; //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ Canvas. пїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ SetActive()
     }
 
     void Update()
@@ -48,37 +44,37 @@ public class Menu : MonoBehaviour
         }
     }
 
-    public void ChangeVolume(float val) //Изменение звука
+    public void ChangeVolume(float val) //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
     {
         volume = val;
     }
 
-    public void ChangeResolution(int index) //Изменение разрешения
+    public void ChangeResolution(int index) //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     {
         currResolutionIndex = index;
     }
 
-    public void ChangeFullscreenMode(bool val) //Включение или отключение полноэкранного режима
+    public void ChangeFullscreenMode(bool val) //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
     {
         isFullscreen = val;
     }
 
-    public void ChangeQuality(int index) //Изменение качества
+    public void ChangeQuality(int index) //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     {
         quality = index;
     }
 
     public void GoToSettings()
     {
-       
+
     }
 
     public void SaveSettings()
     {
-        audioMixer.SetFloat("MasterVolume", volume); //Изменение уровня громкости
-        QualitySettings.SetQualityLevel(quality); //Изменение качества
-        Screen.fullScreen = isFullscreen; //Включение или отключение полноэкранного режима
-        Screen.SetResolution(Screen.resolutions[currResolutionIndex].width, Screen.resolutions[currResolutionIndex].height, isFullscreen); //Изменения разрешения
+        audioMixer.SetFloat("MasterVolume", volume); //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+        QualitySettings.SetQualityLevel(quality); //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+        Screen.fullScreen = isFullscreen; //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
+        Screen.SetResolution(Screen.resolutions[currResolutionIndex].width, Screen.resolutions[currResolutionIndex].height, isFullscreen); //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     }
 
 }
