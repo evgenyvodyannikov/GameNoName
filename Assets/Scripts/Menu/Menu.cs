@@ -15,6 +15,7 @@ public class Menu : MonoBehaviour
     public Dropdown resolutionDropdown; //������ � ������������ ��� ����
     private Resolution[] resolutions; //������ ��������� ����������
     private int currResolutionIndex = 0; //������� ����������
+    public GameObject settings;
     public AudioClip[] music;
 
     public void PlayPressed()
@@ -22,6 +23,10 @@ public class Menu : MonoBehaviour
         SceneManager.LoadScene("Game");
     }
 
+    private void Awake()
+    {
+      // settings.SetActive(false);
+    }
 
     private void Start()
     {
@@ -66,7 +71,7 @@ public class Menu : MonoBehaviour
 
     public void GoToSettings()
     {
-
+       settings.SetActive(true);
     }
 
     public void SaveSettings()

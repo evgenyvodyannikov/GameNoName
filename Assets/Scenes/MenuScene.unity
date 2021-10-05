@@ -370,7 +370,10 @@ MonoBehaviour:
   isFullscreen: 0
   audioMixer: {fileID: 0}
   resolutionDropdown: {fileID: 0}
-  music: []
+  settings: {fileID: 0}
+  music:
+  - {fileID: 8300000, guid: 738d52404ebb4724a83a696478321a6b, type: 3}
+  - {fileID: 8300000, guid: fe38c45d0247a95468706563c0e73451, type: 3}
 --- !u!114 &195833225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1192,6 +1195,7 @@ GameObject:
   - component: {fileID: 884503235}
   - component: {fileID: 884503234}
   - component: {fileID: 884503233}
+  - component: {fileID: 884503236}
   m_Layer: 5
   m_Name: SaveBtn
   m_TagString: Untagged
@@ -1262,7 +1266,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 884503234}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 884503236}
+        m_TargetAssemblyTypeName: BtnControll, Assembly-CSharp
+        m_MethodName: GoToSetting
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &884503234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1301,6 +1317,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 884503231}
   m_CullTransparentMesh: 1
+--- !u!114 &884503236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 884503231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 636d993daa2fc9845bdfa0208222f674, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  settings: {fileID: 195833222}
 --- !u!1 &955680389
 GameObject:
   m_ObjectHideFlags: 0
@@ -1544,7 +1573,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1035535702}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2115,6 +2144,7 @@ MonoBehaviour:
   isFullscreen: 0
   audioMixer: {fileID: 0}
   resolutionDropdown: {fileID: 0}
+  settings: {fileID: 0}
   music:
   - {fileID: 8300000, guid: 738d52404ebb4724a83a696478321a6b, type: 3}
   - {fileID: 8300000, guid: fe38c45d0247a95468706563c0e73451, type: 3}
@@ -2320,7 +2350,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1698231286}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2388,7 +2418,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
 --- !u!114 &1698231289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2445,6 +2475,7 @@ MonoBehaviour:
   isFullscreen: 0
   audioMixer: {fileID: 0}
   resolutionDropdown: {fileID: 0}
+  settings: {fileID: 168080067}
   music: []
 --- !u!1 &1703003574
 GameObject:
@@ -2645,7 +2676,10 @@ MonoBehaviour:
   isFullscreen: 0
   audioMixer: {fileID: 0}
   resolutionDropdown: {fileID: 0}
-  music: []
+  settings: {fileID: 195833222}
+  music:
+  - {fileID: 8300000, guid: 738d52404ebb4724a83a696478321a6b, type: 3}
+  - {fileID: 8300000, guid: fe38c45d0247a95468706563c0e73451, type: 3}
 --- !u!1 &1787190804
 GameObject:
   m_ObjectHideFlags: 0
@@ -3178,6 +3212,7 @@ GameObject:
   - component: {fileID: 2051451247}
   - component: {fileID: 2051451249}
   - component: {fileID: 2051451248}
+  - component: {fileID: 2051451250}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -3246,6 +3281,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2051451246}
   m_CullTransparentMesh: 1
+--- !u!114 &2051451250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2051451246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 636d993daa2fc9845bdfa0208222f674, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  settings: {fileID: 0}
 --- !u!1 &2071344368
 GameObject:
   m_ObjectHideFlags: 0
@@ -3422,7 +3470,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2087960393}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
