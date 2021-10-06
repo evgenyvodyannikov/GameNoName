@@ -10,15 +10,16 @@ public class BtnControll : MonoBehaviour
 
 
     public GameObject settings;
-
+    public GameObject menu;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        settings.SetActive(false);
     }
 
+
+    
     // Update is called once per frame
     void Update()
     {
@@ -27,12 +28,12 @@ public class BtnControll : MonoBehaviour
 
     public void GoToSettings()
     {
-        settings.SetActive(true);
+        menu.SetActive(false);
     }
 
     public void GoToMenu()
     {
-        settings.SetActive(false);
+        menu.SetActive(true);
     }
 }
 
